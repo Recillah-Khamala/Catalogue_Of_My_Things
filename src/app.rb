@@ -51,6 +51,7 @@ class App
     choises(choice)
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def choises(choice)
     case choice
     when 1
@@ -78,6 +79,7 @@ class App
 
     option
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   def close_app
     @storage.write_data
@@ -89,7 +91,7 @@ class App
 
   def option
     spacer
-    puts 'continue?: 
+    puts 'continue?:
     1 - Yes I want make a different choise
     2 - No I want exit the app'
 
@@ -97,13 +99,11 @@ class App
     option = gets.chomp.to_i
 
     close_app if option == 2
-    
+
     start if option == 1
   end
 
-  def run
-
-  end
+  def run; end
 
   def books
     puts 'to be implemented'
