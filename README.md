@@ -1,39 +1,10 @@
-# TDD
-In this project I implement a class with some methods, but by doing test-driven development (TDD). The idea is to write tests first and then the code. 
-
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
--->
-
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
   <img src="microverse_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Microverse README Template</b></h3>
+  <h3><b>Catalogue_Of_My_Things</b></h3>
 
 </div>
 
@@ -63,29 +34,18 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Catalogue_Of_My_Things] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**[Catalogue_Of_My_Things]** is a console app that will help to keep a record of different types of things one owns: books, music albums, movies, and games. Everything is based on the UML class diagram. The data is stored in JSON files but we also prepare a database with tables structure analogical the program's class structure.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://ruby.org/">Ruby</a></li>
   </ul>
 </details>
 
@@ -208,17 +168,23 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **Recillah Khamala**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Recillah-Khamala](https://github.com/Recillah-Khamala)
+- Twitter: [@recillahk](https://twitter.com/recillahk)
+- LinkedIn: [Recillah Khamala](https://www.linkedin.com/in/recillah-khamala/)
 
-👤 **Author2**
+👤 **Kaweesi Matia**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Kaweesi-Matia](https://github.com/Kaweesi-Matia)
+- Twitter: [@kaweesimatia](https://twitter.com/kaweesimatia)
+- LinkedIn: [Kaweesi Matia](https://www.linkedin.com/in/kaweesi-matia/)
+
+👤 **Tashobya Israel**
+
+- GitHub: [@tashisrael](https://github.com/tashisrael)
+- Twitter: [@tashisrael](https://twitter.com/tashisrael)
+- Linkedin: [Tashobya Israel](https://www.linkedin.com/in/tashobya-israel-6a66b0181/l)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
