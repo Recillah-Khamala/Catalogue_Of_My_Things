@@ -1,4 +1,7 @@
 # Create a Book class in a separate .rb file.
+class Book
+  'to be implemented'
+end
 # All Book class properties visible in the diagram should be defined and set up in the constructor method.
 # Implement methods:
 # can_be_archived?() in the Book class
