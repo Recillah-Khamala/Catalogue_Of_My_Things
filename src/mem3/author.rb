@@ -11,3 +11,20 @@
 # All data should be preserved by saving collections in .json files.
 # Create a schema.sql file with tables that will be analogical to the structure of the classes that you created:
 # authors table
+
+class Author
+  attr_reader :first_name, :last_name
+  attr_accessor :items
+
+  def initialize(first_name, last_name, id: rand(1..1000))
+    @id = id
+    @items = []
+    @first_name = first_name
+    @last_name = last_name
+  end
+
+  def add_item(item)
+    @items.push(item)
+    item.author = self
+  end
+end
