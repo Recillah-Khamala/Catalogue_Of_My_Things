@@ -9,6 +9,18 @@ class Book < Item
     @cover_state = cover_state
     @Publish_date = publish-date
   end
+  
+  # Implement methods:
+  #   can_be_archived?() in the Book class
+  #   should override the method from the parent class
+  #   should return true if parent's method returns true OR if cover_state equals to "bad"
+  #   otherwise, it should return false
+
+  def can_be_archived?
+    super || cover_state =='bad'
+  end
+
+  # All data should be preserved by saving collections in .json files.
 end
 
 # Add unit tests for all implemented methods.
