@@ -1,6 +1,16 @@
 require_relative '../item'
 # Create a Label class with an association to the Item class (in a separate .rb file).
 class Label
+  # All Label class properties visible in the diagram should be defined and set up in the constructor method.
+  attr_accessor :title, :color
+  attr_reader :id, :items
+
+  def initialize(title, color)
+    @id = Random.rand(1..1000)
+    @title = title
+    @color = color
+    @items = []
+  end
 end
 
 # Implement methods:
