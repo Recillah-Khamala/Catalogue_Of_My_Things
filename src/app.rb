@@ -118,8 +118,4 @@ class App < Handler
   def add_book
     puts 'to be implemented'
   end
-
-  def genres
-    puts 'to be implemented'
-  end
 end

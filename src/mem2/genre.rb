@@ -12,10 +12,11 @@
 # Create a schema.sql file with tables that will be analogical to the structure of the classes that you created:
 # genres table
 class Genre
-  attr_reader :items, :name, :id
+  attr_reader :id
+  attr_accessor :items, :name
 
-  def initialize(name, id: rand(1..1000))
-    @id = id
+  def initialize(name)
+    @id = rand(1..1000)
     @name = name
     @items = []
   end
