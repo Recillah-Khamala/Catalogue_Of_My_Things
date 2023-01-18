@@ -119,7 +119,4 @@ class App < Handler
     puts 'to be implemented'
   end
 
-  def genres
-    puts 'to be implemented'
-  end
 end
