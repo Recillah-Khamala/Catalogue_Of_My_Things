@@ -29,11 +29,13 @@ class Book < Item
       publisher: @publisher,
       publish_date: @date,
       cover_state: @cover_state,
-      archived: @archived, label: {
+      archived: @archived, 
+      label: {
         id: label.id,
         title: label.title,
         color: label.color
-      }, author: {
+      }, 
+      author: {
         id: author.id,
         first_name: author.first_name,
         last_name: author.last_name
