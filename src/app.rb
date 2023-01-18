@@ -122,8 +122,4 @@ class App < Handler
   def genres
     puts 'to be implemented'
   end
-
-  def authors
-    puts 'to be implemented'
-  end
 end

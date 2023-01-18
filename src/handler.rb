@@ -3,14 +3,30 @@ class Handler
     print 'Please write multiplayer: '
     multiplayer = gets.chomp
 
-    print 'Please write date of publish [Enter date in format (yyyy-mm-dd)]'
+    print 'Please write date of publish [Enter date in format (yyyy-mm-dd)]: '
     publish_date = gets.chomp
 
-    print 'Please write last played date [Enter date in format (yyyy-mm-dd)]'
+    print 'Please write last played date [Enter date in format (yyyy-mm-dd)]: '
     last_played_date = gets.chomp
 
     @games.push(Game.new(multiplayer, publish_date, last_played_date))
     puts 'Game is created'
+  end
+
+  def games
+    puts 'Available Games:'
+    @games.each do |games|
+      puts "Multiplayer: #{games.multiplayer}, Publish Date: #{games.publish_date},
+      Last played date: #{games.last_played_date}"
+    end
+  end
+
+  def authors
+    puts 'Authors:'
+    @authors.each do |author|
+      puts "First Name: #{author.first_name}"
+      puts "Last Name: #{author.last_name}"
+    end
   end
 
   def add_music_album
