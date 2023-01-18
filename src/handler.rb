@@ -56,7 +56,7 @@ class Handler
 
   def genres
     puts 'Genres:'
-    puts 'No genre found' if @genres.length.zero?
+    puts 'No genre found' if @genres.empty?
     @genres.each do |genre|
       puts "Genre name: #{genre.name}"
     end
