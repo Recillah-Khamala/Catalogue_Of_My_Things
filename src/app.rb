@@ -104,18 +104,4 @@ class App < Handler
 
     start if option == 1
   end
-
-  def run; end
-
-  def books
-    puts 'to be implemented'
-  end
-
-  def labels
-    puts 'to be implemented'
-  end
-
-  def add_book
-    puts 'to be implemented'
-  end
 end

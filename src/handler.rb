@@ -1,4 +1,69 @@
 class Handler
+
+  # option to list all books 
+  def books
+    if @books.empty?
+      puts 'No books listed!!!'
+    else
+      Number_of_books = books.count
+      puts Number_of_books > 1 ? "#{Number_of_books} Books Available" : "#{Number_of_books} Book Available "
+      puts '*' * 70
+      @books.each_with_index do |book, i|
+        puts "#{i + 1} - Title: #{book.label.title} | Author: #{book.author.first_name} #{book.author.last_name} | ",
+             " Publisher: #{book.publisher} | Date: #{book.date} | Cover State: #{book.cover_state}"
+      end
+    end
+  end
+
+  # option to list all labels (e.g. 'Gift', 'New')
+  def labels
+    if @labels.empty?
+      puts 'No labes listed!!!'
+    else
+      Number_of_labels = labels.count
+      puts Number_of_labels > 1 ? "#{Number_of_labels} Labels Available" : "#{Number_of_labels} Label Available "
+      puts '-' * 70
+      @labels.each_with_index do |label, i|
+        puts "#{i + 1} | Title : #{label.title} | Color: #{label.color}"
+      end
+    end
+  end
+
+  def new_author
+    first_name = get_user_input('Enter Author\'s first name: ')
+    last_name = get_user_input('Enter Author\'s last name: ')
+    Author.new(first_name, last_name)
+  end
+
+  def new_label(type)
+    print "Title of the #{type}: "
+    title = gets.chomp
+    print "Color of the #{type}: "
+    color = gets.chomp
+    Label.new(title, color)
+  end
+
+  # option to add a book
+  def add_book
+    author = new_author
+    label = new_label('Book')
+
+    publisher = get_user_input('Publisher?: ')
+    date = get_user_input('Year of publication?: ')
+    cover_state = get_user_input('Book Cover State? [good/bad]: ').downcase
+
+    book = Book.new(publisher, date, cover_state)
+    label.add_item(book)
+    author.add_item(book)
+
+    @books.push(book)
+    @labels.push(label)
+    @authors.push(author)
+
+    puts ''
+    puts "#{label.title} by #{author.first_name} #{author.last_name} book created successfully"
+  end
+
   def add_game
     print 'Please write multiplayer: '
     multiplayer = gets.chomp

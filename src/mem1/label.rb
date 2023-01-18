@@ -32,5 +32,3 @@ class Label
 end
 
 # Add unit tests for all implemented methods.
-# The following options should be available:
-# List all labels (e.g. 'Gift', 'New')

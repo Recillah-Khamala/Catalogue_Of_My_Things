@@ -29,12 +29,12 @@ class Book < Item
       publisher: @publisher,
       publish_date: @date,
       cover_state: @cover_state,
-      archived: @archived, 
+      archived: @archived,
       label: {
         id: label.id,
         title: label.title,
         color: label.color
-      }, 
+      },
       author: {
         id: author.id,
         first_name: author.first_name,
@@ -43,7 +43,3 @@ class Book < Item
     }
   end
 end
-
-# The following options should be available:
-#   List all books
-#   Add a book
