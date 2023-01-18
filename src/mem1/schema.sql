@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS labels;
 
 -- Create a schema.sql file with tables that will be analogical to the structure of the classes that you created:
 -- books table (add all properties and associations from the parent Item class as table columns)
+
 -- books Table
 CREATE TABLE books(
   id SERIAL NOT NULL PRIMARY KEY,

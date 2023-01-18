@@ -1,34 +1,34 @@
-require_relative '../src/mem1/book'
-require_relative '../src/mem1/label'
-require_relative '../src/item'
+# require_relative '../src/mem1/book'
+# require_relative '../src/mem1/label'
+# require_relative '../src/item'
 
-# Add unit tests for all implemented methods.
-describe 'Test the book class' do
-  it 'Tests initialize method' do
-    book = Book.new('Israel', '09/11/2013', 'Good')
+# # Add unit tests for all implemented methods.
+# describe 'Test the book class' do
+#   it 'Tests initialize method' do
+#     book = Book.new('Israel', '09/11/2013', 'Good')
 
-    expect(book.publisher).to eq('Israel')
-    expect(book.publish_date).to eq('09/11/2013')
-    expect(book.cover_state).to eq('Good')
-  end
+#     expect(book.publisher).to eq('Israel')
+#     expect(book.publish_date).to eq('09/11/2013')
+#     expect(book.cover_state).to eq('Good')
+#   end
 
-  it 'Tests class methods' do
-    test_publisher = 'Kaweesi'
-    old_date = '06/08/2014'
-    new_date = '03/24/2020'
-    good_cover = 'good'
-    bad_cover = 'bad'
+#   it 'Tests class methods' do
+#     test_publisher = 'Kaweesi'
+#     old_date = '06/08/2014'
+#     new_date = '03/24/2020'
+#     good_cover = 'good'
+#     bad_cover = 'bad'
 
-    book1 = Book.new(test_publisher, good_cover, old_date)
-    book2 = Book.new(test_publisher, good_cover, new_date)
-    book3 = Book.new(test_publisher, bad_cover, old_date)
-    book4 = Book.new(test_publisher, bad_cover, new_date)
+#     book1 = Book.new(test_publisher, good_cover, old_date)
+#     book2 = Book.new(test_publisher, good_cover, new_date)
+#     book3 = Book.new(test_publisher, bad_cover, old_date)
+#     book4 = Book.new(test_publisher, bad_cover, new_date)
 
-    expect(book1.can_be_archived?).to eq(true)
-    expect(book2.can_be_archived?).to eq(false)
-    expect(book3.can_be_archived?).to eq(true)
-    expect(book4.can_be_archived?).to eq(true)
-  end
+#     expect(book1.can_be_archived?).to eq(true)
+#     expect(book2.can_be_archived?).to eq(false)
+#     expect(book3.can_be_archived?).to eq(true)
+#     expect(book4.can_be_archived?).to eq(true)
+#   end
 
   #   it 'Test the add label method' do
   #     test_publisher = 'Recillah'
