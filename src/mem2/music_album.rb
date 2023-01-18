@@ -12,13 +12,14 @@
 # All data should be preserved by saving collections in .json files.
 # Create a schema.sql file with tables that will be analogical to the structure of the classes that you created:
 # music_albums table (add all properties and associations from the parent Item class as table columns)
-
 require_relative '../item'
 class MusicAlbum < Item
-  attr_accessor :artist_name, :publish_date, :on_spotify
+  attr_accessor :name, :publish_date, :on_spotify
 
-  def initialize(on_spotify, publish_date: Time.now, archived: nil, id: rand(1..1000))
-    super(publish_date, archived: archived, id: id)
+  def initialize(name, publish_date, on_spotify)
+    @id = Random.rand(1..1000)
+    super(publish_date, archived)
+    @name = name
     @on_spotify = on_spotify
   end
 
