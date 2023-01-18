@@ -9,6 +9,7 @@ require_relative './handler'
 
 class App < Handler
   def initialize
+    super
     @books = []
     @labels = []
     @games = []
