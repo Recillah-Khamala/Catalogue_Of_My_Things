@@ -7,9 +7,9 @@ class Book < Item
     super(publish_date, archived: archived)
     @publisher = publisher
     @cover_state = cover_state
-    @Publish_date = publish-date
+    @publish_date = publish_date
   end
-  
+
   # Implement methods:
   #   can_be_archived?() in the Book class
   #   should override the method from the parent class
@@ -17,7 +17,7 @@ class Book < Item
   #   otherwise, it should return false
 
   def can_be_archived?
-    super || cover_state =='bad'
+    super || cover_state == 'bad'
   end
 
   # All data should be preserved by saving collections in .json files.
