@@ -5,8 +5,9 @@ require_relative './mem2/genre'
 require_relative './mem3/game'
 require_relative './mem3/author'
 require_relative './store'
+require_relative './handler'
 
-class App
+class App < Handler
   def initialize
     @books = []
     @labels = []
@@ -117,27 +118,11 @@ class App
     puts 'to be implemented'
   end
 
-  def albums
-    puts 'to be implemented'
-  end
-
   def genres
     puts 'to be implemented'
   end
 
-  def add_music_album
-    puts 'to be implemented'
-  end
-
-  def games
-    puts 'to be implemented'
-  end
-
   def authors
-    puts 'to be implemented'
-  end
-
-  def add_game
     puts 'to be implemented'
   end
 end
