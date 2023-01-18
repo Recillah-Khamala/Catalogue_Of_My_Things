@@ -31,43 +31,48 @@ class Storage
   end
 
   def save_books
-    # return if @app.people.empty?
+    return if @app.people.empty?
 
-    # people_json = @app.people.map(&:as_json)
-    # File.write('people.json', JSON.dump(people_json))
+    books = @app.books.map(&:as_json)
+    book_file = './json_files/book.json'
+    File.write(book_file, JSON.dump(books))
   end
 
   def load_books
-    # handle case when people.json is not available (people.json)
-    # return unless File.exist?('people.json')
+    # handle case when book.json is not available (book.json)
+    book_file = './json_files/book.json'
+    return unless File.exist?(book_file)
 
-    # people_json = JSON.parse(File.read('people.json'))
-    # people_json.each do |person|
-    #   if person['type'] == 'Student'
-    #     new_student = Student.new(person['age'], person['classroom'], person['name'], person['parent_permission'])
-    #     @app.people.push(new_student)
-    #   else
-    #     new_teacher = Teacher.new(person['age'], person['specialization'], person['name'])
-    #     @app.people.push(new_teacher)
-    #   end
-    # end
+    book_list = JSON.parse(File.read(book_file))
+    book_list.each do |book|
+      book_new = Book.new(book['publisher'], book['date'], book['cover_state'])
+      label_new = Label.new(book['label']['title'], book['label']['color'])
+      author_new = Author.new(book['author']['first_name'], book['author']['last_name'])
+
+      book_new.label = label_new
+      book_new.author = author_new
+
+      @app.books.push(book_new)
+    end
   end
 
   def save_labels
-    # return if @app.books.empty?
+    return if @app.labels.empty?
 
-    # books = @app.books.map(&:as_json)
-    # File.write('books.json', JSON.dump(books))
+    labels = @app.labels.map(&:as_json)
+    labels_file = './json_files/label.json'
+    File.write(labels_file, JSON.dump(labels))
   end
 
   def load_labels
-    # return unless File.exist?('books.json')
+    labels_file = './json_files/label.json'
+    return unless File.exist?(labels_file)
 
-    # books = JSON.parse(File.read('books.json'))
-    # books.each do |book|
-    #   new_book = Book.new(book['title'], book['author'])
-    #   @app.books.push(new_book)
-    # end
+    label_list = JSON.parse(File.read(labels_file))
+    book_list.each do |label|
+      label_new = Label.new(label['title'], label['color'])
+      @app.labels.push(label_new)
+    end
   end
 
   def save_music_albums
@@ -82,8 +87,8 @@ class Storage
 
     # books = JSON.parse(File.read('books.json'))
     # books.each do |book|
-    #   new_book = Book.new(book['title'], book['author'])
-    #   @app.books.push(new_book)
+    #   book_new = Book.new(book['title'], book['author'])
+    #   @app.books.push(book_new)
     # end
   end
 
@@ -99,8 +104,8 @@ class Storage
 
     # books = JSON.parse(File.read('books.json'))
     # books.each do |book|
-    #   new_book = Book.new(book['title'], book['author'])
-    #   @app.books.push(new_book)
+    #   book_new = Book.new(book['title'], book['author'])
+    #   @app.books.push(book_new)
     # end
   end
 
@@ -116,8 +121,8 @@ class Storage
 
     # books = JSON.parse(File.read('books.json'))
     # books.each do |book|
-    #   new_book = Book.new(book['title'], book['author'])
-    #   @app.books.push(new_book)
+    #   book_new = Book.new(book['title'], book['author'])
+    #   @app.books.push(book_new)
     # end
   end
 
@@ -133,8 +138,8 @@ class Storage
 
     # books = JSON.parse(File.read('books.json'))
     # books.each do |book|
-    #   new_book = Book.new(book['title'], book['author'])
-    #   @app.books.push(new_book)
+    #   book_new = Book.new(book['title'], book['author'])
+    #   @app.books.push(book_new)
     # end
   end
 end
