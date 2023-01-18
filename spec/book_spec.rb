@@ -30,17 +30,17 @@
 #     expect(book4.can_be_archived?).to eq(true)
 #   end
 
-  #   it 'Test the add label method' do
-  #     test_publisher = 'Recillah'
-  #     test_publish_date = '04/28/2016'
-  #     test_cover_state = 'Good'
-  #     book = Book.new(test_publisher, test_cover_state, test_publish_date)
+#   it 'Test the add label method' do
+#     test_publisher = 'Recillah'
+#     test_publish_date = '04/28/2016'
+#     test_cover_state = 'Good'
+#     book = Book.new(test_publisher, test_cover_state, test_publish_date)
 
-  #     test_title = 'title'
-  #     test_color = 'maroon'
-  #     label = Label.new(test_title, test_color)
-  #     book.add_label(label)
+#     test_title = 'title'
+#     test_color = 'maroon'
+#     label = Label.new(test_title, test_color)
+#     book.add_label(label)
 
-  #     expect(book.label).to eq(label)
-  #   end
-end
+#     expect(book.label).to eq(label)
+#   end
+# end
