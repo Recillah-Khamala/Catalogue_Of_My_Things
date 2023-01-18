@@ -21,11 +21,16 @@ class Label
     @items << item
     item.label = self
   end
+
+  # All data should be preserved by saving collections in .json files
+  def as_json()
+    {
+      title: @title,
+      color: @color
+    }
+  end
 end
 
 # Add unit tests for all implemented methods.
 # The following options should be available:
 # List all labels (e.g. 'Gift', 'New')
-# All data should be preserved by saving collections in .json files
-# Create a schema.sql file with tables that will be analogical to the structure of the classes that you created:
-# labels table

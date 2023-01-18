@@ -23,10 +23,25 @@ class Book < Item
   end
 
   # All data should be preserved by saving collections in .json files.
+  def as_json()
+    {
+      id: @id,
+      publisher: @publisher,
+      publish_date: @date,
+      cover_state: @cover_state,
+      archived: @archived, label: {
+        id: label.id,
+        title: label.title,
+        color: label.color
+      }, author: {
+        id: author.id,
+        first_name: author.first_name,
+        last_name: author.last_name
+      }
+    }
+  end
 end
 
 # The following options should be available:
 #   List all books
 #   Add a book
-# Create a schema.sql file with tables that will be analogical to the structure of the classes that you created:
-#   books table (add all properties and associations from the parent Item class as table columns)
