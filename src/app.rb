@@ -118,5 +118,4 @@ class App < Handler
   def add_book
     puts 'to be implemented'
   end
-
 end

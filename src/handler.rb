@@ -45,15 +45,15 @@ class Handler
       @music_albums.push(MusicAlbum.new(name, publish_date, false))
     end
     puts 'Music album created'
-  
   end
+
   def albums
     puts 'Music Albums'
     @music_albums.each do |music_album|
       puts "Name: #{music_album.name}, Publish Date: #{music_album.publish_date}, On Spotify: #{music_album.on_spotify}"
     end
   end
-  
+
   def genres
     puts 'Genres:'
     puts 'No genre found' if @genres.length.zero?
@@ -61,5 +61,4 @@ class Handler
       puts "Genre name: #{genre.name}"
     end
   end
-
 end
