@@ -1,5 +1,8 @@
+require_relative '../item'
 # Create a Label class with an association to the Item class (in a separate .rb file).
-# All Label class properties visible in the diagram should be defined and set up in the constructor method.
+class Label
+end
+
 # Implement methods:
 # add_item method in the Label class
 # should take an instance of the Item class as an input
