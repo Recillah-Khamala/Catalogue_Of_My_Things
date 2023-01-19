@@ -1,7 +1,6 @@
 require 'date'
 class Item
   attr_accessor :id, :publish_date, :archived
-  attr_reader :label
 
   def initialize(publish_date, archived)
     @id = Random.rand(1..100)
@@ -11,7 +10,7 @@ class Item
 
   def can_be_archived?
     date = Date.parse(@publish_date)
-    
+
     return true if Time.now.year - date.year > 10
   end
 

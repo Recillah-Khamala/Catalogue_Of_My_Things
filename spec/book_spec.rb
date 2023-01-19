@@ -33,15 +33,14 @@ describe 'Test the book class' do
 end
 
 describe Book do
-  let(:book) { Book.new("The Great Gatsby", "Scribner", "1925-04-10", "good") }
-  
-  describe "#can_be_archived?" do
+  let(:book) { Book.new('The Great Gatsby', 'Scribner', '1925-04-10', 'good') }
+
+  describe '#can_be_archived?' do
     context "when the cover state is 'bad'" do
-      it "returns true" do
-        book.cover_state = "bad"
+      it 'returns true' do
+        book.cover_state = 'bad'
         expect(book.can_be_archived?).to be true
       end
     end
   end
 end
-
