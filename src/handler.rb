@@ -110,7 +110,6 @@ class Handler
     @genres.push(Genre.new(genre_name))
     store_genre_data
 
-
     puts 'Date of publish [Enter date in format (yyyy-mm-dd)]'
     publish_date = gets.chomp
 
@@ -161,8 +160,6 @@ class Handler
       array << {
         genre_id: genre.id,
         genre_name: genre.name
-
-
       }
     end
     update_data(array, './src/json_files/genres.json')
