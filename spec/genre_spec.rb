@@ -12,10 +12,5 @@ describe Genre do
     it 'should return name instance of the genre class ' do
       expect(genre.name).to equal(name)
     end
-
-    # it 'should return the item passed into genre items array' do
-    #   genre.add_item(item)
-    #   expect(genre.items).to include(item)
-    # end
   end
 end

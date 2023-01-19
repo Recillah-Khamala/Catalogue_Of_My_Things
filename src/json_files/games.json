@@ -18,5 +18,10 @@
     "multiplayer": "Basketball",
     "publish_date": "2023-01-19",
     "last_played_date": "1045-04-24"
+  },
+  {
+    "multiplayer": "Chess",
+    "publish_date": "2023-01-19",
+    "last_played_date": "1960-05-30"
   }
 ]
