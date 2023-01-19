@@ -1,4 +1,5 @@
 require_relative './store'
+require_relative './storage'
 
 class Handler
   include JsonStorage
@@ -10,8 +11,7 @@ class Handler
       puts 'No books listed!!!'
     else
       @books.each_with_index do |book, i|
-        puts "#{i + 1} - Title: #{book.label.title} | Author: #{book.author.first_name} #{book.author.last_name} | ",
-             " Publisher: #{book.publisher} | Date: #{book.publish_date} | Cover State: #{book.cover_state}"
+        puts "#{i + 1} - Name: #{book.name} | Publisher: #{book.publisher} | Date: #{book.publish_date} | Cover State: #{book.cover_state}"
       end
     end
   end
@@ -48,6 +48,8 @@ class Handler
     author = new_author
     label = new_label('Book')
 
+    print 'Book name: '
+    title = gets.chomp
     print 'Publisher?: '
     publisher = gets.chomp
     print 'Year of publication?: '
@@ -55,7 +57,7 @@ class Handler
     print 'Cover state? [good/bad]: '
     cover_state = gets.chomp.downcase
 
-    book = Book.new(publisher, date, cover_state)
+    book = Book.new(title, publisher, date, cover_state)
     label.add_item(book)
     author.add_item(book)
 
@@ -82,6 +84,7 @@ class Handler
 
     @games.push(Game.new(multiplayer, publish_date, last_played_date))
     puts 'Game is created'
+    save_games
   end
 
   def games
@@ -95,8 +98,7 @@ class Handler
   def authors
     puts 'Authors:'
     @authors.each do |author|
-      puts "First Name: #{author.first_name}"
-      puts "Last Name: #{author.last_name}"
+      puts "First Name: #{author.first_name} | Last Name: #{author.last_name}"
     end
   end
 
@@ -144,6 +146,6 @@ class Handler
 
       }
     end
-    update_data(array, './src/json_files/music_albums.json')
+    update_data(array, './json_files/music_albums.json')
   end
 end

@@ -10,10 +10,10 @@ require_relative './handler'
 class App < Handler
   def initialize
     super
-    @books = []
-    @labels = []
-    @games = []
-    @authors = []
+    @books = load_books
+    @labels = load_labels
+    @games = load_games
+    @authors = load_authors
     @genres = []
     @music_albums = []
 
