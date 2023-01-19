@@ -17,7 +17,7 @@ class App < Handler
     @genres = []
     @music_albums = []
 
-    @storage = Storage.new(self)
+    # @storage = Storage.new(self)
   end
 
   def spacer
@@ -84,7 +84,7 @@ class App < Handler
   # rubocop:enable Metrics/CyclomaticComplexity
 
   def close_app
-    @storage.write_data
+    # @storage.write_data
     spacer
     puts 'Till next time bye!!!'
     spacer
@@ -103,19 +103,5 @@ class App < Handler
     close_app if option == 2
 
     start if option == 1
-  end
-
-  def run; end
-
-  def books
-    puts 'to be implemented'
-  end
-
-  def labels
-    puts 'to be implemented'
-  end
-
-  def add_book
-    puts 'to be implemented'
   end
 end
