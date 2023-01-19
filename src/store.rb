@@ -37,13 +37,13 @@ module Storage
                        cover_state: book.cover_state })
     end
 
-    book_file = './json_files/book.json'
+    book_file = './src/json_files/book.json'
     File.write(book_file, JSON.pretty_generate(book_data))
   end
 
   def load_books
     # handle case when book.json is not available (book.json)
-    book_file = './json_files/book.json'
+    book_file = './src/json_files/book.json'
     data = []
     if File.exist?(book_file) && File.read(book_file) != ''
       JSON.parse(File.read(book_file)).each do |book|
@@ -75,12 +75,12 @@ module Storage
       label_data.push({ title: label.title, color: label.color })
     end
 
-    label_file = './json_files/label.json'
+    label_file = './src/json_files/label.json'
     File.write(label_file, JSON.pretty_generate(label_data))
   end
 
   def load_labels
-    file = './json_files/label.json'
+    file = './src/json_files/label.json'
     data = []
     if File.exist?(file) && File.read(file) != ''
       JSON.parse(File.read(file)).each do |element|
@@ -138,12 +138,12 @@ module Storage
       data.push({ multiplayer: game.multiplayer, publish_date: game.publish_date,
                   last_played_date: game.last_played_date })
     end
-    File.write('./json_files/games.json', JSON.pretty_generate(data))
+    File.write('./src/json_files/games.json', JSON.pretty_generate(data))
   end
 
   def load_games
     data = []
-    file = './json_files/games.json'
+    file = './src/json_files/games.json'
     if File.exist?(file)
       JSON.parse(File.read(file)).each do |games|
         data.push(Game.new(games['multiplayer'], games['last_played_date'], games['publish_date']))
@@ -156,7 +156,7 @@ module Storage
 
   def load_authors
     authors_data = []
-    file = './json_files/authors.json'
+    file = './src/json_files/authors.json'
     if File.exist?(file)
       JSON.parse(File.read(file)).each do |author|
         authors_data.push(Author.new(author['first_name'], author['last_name']))
@@ -173,6 +173,6 @@ module Storage
     @authors.each do |author|
       authors_data.push({ first_name: author.first_name, last_name: author.last_name })
     end
-    open('./json_files/authors.json', 'w') { |f| f << JSON.pretty_generate(authors_data) }
+    open('./src/json_files/authors.json', 'w') { |f| f << JSON.pretty_generate(authors_data) }
   end
 end
