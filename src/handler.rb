@@ -1,5 +1,7 @@
 require_relative './store'
+
 class Handler
+  include JsonStorage
   include Storage
 
   # option to list all books
@@ -114,6 +116,7 @@ class Handler
       @music_albums.push(MusicAlbum.new(name, publish_date, false))
     end
     puts 'Music album created'
+    store_music_data
   end
 
   def albums
@@ -129,5 +132,18 @@ class Handler
     @genres.each do |genre|
       puts "Genre name: #{genre.name}"
     end
+  end
+
+  def store_music_data
+    array = []
+    @music_albums.each do |music|
+      array << {
+        music_id: music.id,
+        music_name: music.name,
+        music_on_spotify: music.on_spotify
+
+      }
+    end
+    update_data(array, './src/json_files/music_albums.json')
   end
 end
