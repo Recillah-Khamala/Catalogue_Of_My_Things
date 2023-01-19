@@ -10,7 +10,6 @@ class Item
 
   def can_be_archived?
     date = Date.parse(@publish_date)
-
     return true if Time.now.year - date.year > 10
   end
 
