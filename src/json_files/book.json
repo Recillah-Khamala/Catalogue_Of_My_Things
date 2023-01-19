@@ -28,5 +28,17 @@
     "publisher": "sdas",
     "publish_date": "2017",
     "cover_state": "bad"
+  },
+  {
+    "name": "Harmony",
+    "publisher": "Paul",
+    "publish_date": "2019",
+    "cover_state": "goo"
+  },
+  {
+    "name": "Embu",
+    "publisher": "Recillah",
+    "publish_date": "2022",
+    "cover_state": "good"
   }
 ]

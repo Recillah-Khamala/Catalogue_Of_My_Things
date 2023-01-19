@@ -151,7 +151,7 @@ class Handler
 
       }
     end
-    update_data(array, './json_files/music_albums.json')
+    update_data(array, './src/json_files/music_albums.json')
   end
 
   def store_genre_data
