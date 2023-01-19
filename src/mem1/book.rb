@@ -3,10 +3,11 @@ require_relative '../item'
 # Create a Book class in a separate .rb file.
 class Book < Item
   # All Book class properties visible in the diagram should be defined and set up in the constructor method.
-  attr_accessor :publisher, :cover_state, :label, :author, :publish_date
+  attr_accessor :name, :publisher, :cover_state, :label, :author, :publish_date
 
-  def initialize(publisher, publish_date, cover_state)
+  def initialize(name, publisher, publish_date, cover_state)
     super(publish_date, archived: archived)
+    @name = name
     @publisher = publisher
     @cover_state = cover_state
     @publish_date = publish_date
