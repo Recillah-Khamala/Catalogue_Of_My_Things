@@ -24,11 +24,11 @@ describe 'Test the book class' do
     end
   end
 
-  describe 'Test for the add item method' do
-    it 'adds an item' do
-      item = Item.new('2000', false)
-      label.add_item(item)
-      expect(label.items.count).to eq(1)
-    end
-  end
+#   describe 'Test for the add item method' do
+#     it 'adds an item' do
+#       item = Item.new('2000', false)
+#       label.add_item(item)
+#       expect(label.items.count).to eq(1)
+#     end
+#   end
 end

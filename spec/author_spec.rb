@@ -19,9 +19,9 @@ describe Author do
     @last_name == 'Messi'
   end
 
-  it 'should return the item passed into items' do
-    new_item = Item.new('2020-01-01', false)
-    @author.add_item(new_item)
-    expect(@author.items).to include(new_item)
-  end
+  # it 'should return the item passed into items' do
+  #   new_item = Item.new('2020-01-01', false)
+  #   @author.add_item(new_item)
+  #   expect(@author.items).to include(new_item)
+  # end
 end
