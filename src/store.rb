@@ -33,7 +33,8 @@ module Storage
   def save_books
     book_data = []
     @books.each do |book|
-      book_data.push({ name: book.name, publisher: book.publisher, publish_date: book.publish_date, cover_state: book.cover_state })
+      book_data.push({ name: book.name, publisher: book.publisher, publish_date: book.publish_date,
+                       cover_state: book.cover_state })
     end
 
     book_file = './json_files/book.json'
@@ -43,7 +44,7 @@ module Storage
   def load_books
     # handle case when book.json is not available (book.json)
     book_file = './json_files/book.json'
-    data =[]
+    data = []
     if File.exist?(book_file) && File.read(book_file) != ''
       JSON.parse(File.read(book_file)).each do |book|
         data.push(Book.new(book['name'], book['publisher'], book['publish_date'], book['cover_state']))
@@ -52,16 +53,16 @@ module Storage
         # data.label = label_new
         # data.author = author_new
       end
-    # return unless File.exist?(book_file)
+      # return unless File.exist?(book_file)
 
-    # book_list = JSON.parse(File.read(book_file))
-    # book_list.each do |book|
-    #   book_new = Book.new(book['publisher'], book['publish_date'], book['cover_state'])
-    #   label_new = Label.new(book['label']['title'], book['label']['color'])
-    #   author_new = Author.new(book['author']['first_name'], book['author']['last_name'])
+      # book_list = JSON.parse(File.read(book_file))
+      # book_list.each do |book|
+      #   book_new = Book.new(book['publisher'], book['publish_date'], book['cover_state'])
+      #   label_new = Label.new(book['label']['title'], book['label']['color'])
+      #   author_new = Author.new(book['author']['first_name'], book['author']['last_name'])
 
-    #   book_new.label = label_new
-    #   book_new.author = author_new
+      #   book_new.label = label_new
+      #   book_new.author = author_new
 
       # @app.books.push(book_new)
     end
@@ -141,7 +142,7 @@ module Storage
   end
 
   def load_games
-   data = []
+    data = []
     file = './json_files/games.json'
     if File.exist?(file)
       JSON.parse(File.read(file)).each do |games|
