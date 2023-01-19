@@ -69,7 +69,7 @@ class Handler
     save_labels
     save_authors
   end
-  
+
   def add_game
     print 'Please write multiplayer: '
     multiplayer = gets.chomp
