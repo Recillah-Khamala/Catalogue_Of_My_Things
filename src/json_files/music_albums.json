@@ -1,12 +1,7 @@
 [
   {
-    "music_id" : 45,
-    "music_name" : "www",
-    "music_on_spotify" : true
-  },
-  {
-    "music_id" : 53,
-    "music_name" : "8",
+    "music_id" : 84,
+    "music_name" : "Midnight Train",
     "music_on_spotify" : true
   }
 ]

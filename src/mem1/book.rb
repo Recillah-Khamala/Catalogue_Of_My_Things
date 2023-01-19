@@ -15,9 +15,9 @@ class Book < Item
 
   # Implement methods:
   #   can_be_archived?() in the Book class
-  #   should override the method from the parent class
-  #   should return true if parent's method returns true OR if cover_state equals to "bad"
-  #   otherwise, it should return false
+  #     should override the method from the parent class
+  #     should return true if parent's method returns true OR if cover_state equals to "bad"
+  #     otherwise, it should return false
 
   def can_be_archived?
     super || cover_state == 'bad'
