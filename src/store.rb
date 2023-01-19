@@ -8,7 +8,6 @@ require_relative './app'
 require 'json'
 
 module Storage
-
   def save_books
     book_data = []
     @books.each do |book|
