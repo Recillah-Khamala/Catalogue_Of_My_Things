@@ -1,16 +1,15 @@
+require_relative './store'
 class Handler
+  include Storage
 
-  # option to list all books 
+  # option to list all books
   def books
     if @books.empty?
       puts 'No books listed!!!'
     else
-      Number_of_books = books.count
-      puts Number_of_books > 1 ? "#{Number_of_books} Books Available" : "#{Number_of_books} Book Available "
-      puts '*' * 70
       @books.each_with_index do |book, i|
         puts "#{i + 1} - Title: #{book.label.title} | Author: #{book.author.first_name} #{book.author.last_name} | ",
-             " Publisher: #{book.publisher} | Date: #{book.date} | Cover State: #{book.cover_state}"
+             " Publisher: #{book.publisher} | Date: #{book.publish_date} | Cover State: #{book.cover_state}"
       end
     end
   end
@@ -20,9 +19,6 @@ class Handler
     if @labels.empty?
       puts 'No labes listed!!!'
     else
-      Number_of_labels = labels.count
-      puts Number_of_labels > 1 ? "#{Number_of_labels} Labels Available" : "#{Number_of_labels} Label Available "
-      puts '-' * 70
       @labels.each_with_index do |label, i|
         puts "#{i + 1} | Title : #{label.title} | Color: #{label.color}"
       end
@@ -30,8 +26,10 @@ class Handler
   end
 
   def new_author
-    first_name = get_user_input('Enter Author\'s first name: ')
-    last_name = get_user_input('Enter Author\'s last name: ')
+    print 'Enter Author\'s first name: '
+    first_name = gets.chomp
+    print 'Enter Author\'s last name: '
+    last_name = gets.chomp
     Author.new(first_name, last_name)
   end
 
@@ -48,9 +46,12 @@ class Handler
     author = new_author
     label = new_label('Book')
 
-    publisher = get_user_input('Publisher?: ')
-    date = get_user_input('Year of publication?: ')
-    cover_state = get_user_input('Book Cover State? [good/bad]: ').downcase
+    print 'Publisher?: '
+    publisher = gets.chomp
+    print 'Year of publication?: '
+    date = gets.chomp
+    print 'Cover state? [good/bad]: '
+    cover_state = gets.chomp.downcase
 
     book = Book.new(publisher, date, cover_state)
     label.add_item(book)
@@ -62,6 +63,9 @@ class Handler
 
     puts ''
     puts "#{label.title} by #{author.first_name} #{author.last_name} book created successfully"
+    save_books
+    save_labels
+    save_authors
   end
 
   def add_game

@@ -27,7 +27,7 @@ class Book < Item
     {
       id: @id,
       publisher: @publisher,
-      publish_date: @date,
+      publish_date: @publish_date,
       cover_state: @cover_state,
       archived: @archived,
       label: {

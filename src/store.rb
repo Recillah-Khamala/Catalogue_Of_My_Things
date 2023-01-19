@@ -7,35 +7,37 @@ require_relative './mem3/author'
 require_relative './app'
 require 'json'
 
-class Storage
-  def initialize(app)
-    @app = app
-  end
+module Storage
+  # def initialize(app)
+  #   @app = app
+  # end
 
-  def read_data
-    load_books
-    load_labels
-    load_music_albums
-    load_genres
-    load_games
-    load_authors
-  end
+  # def read_data
+  #   load_books
+  #   load_labels
+  #   load_music_albums
+  #   load_genres
+  #   load_games
+  #   load_authors
+  # end
 
-  def write_data
-    save_books
-    save_labels
-    save_music_albums
-    save_genres
-    save_games
-    save_authors
-  end
+  # def write_data
+  #   save_books
+  #   save_labels
+  #   save_music_albums
+  #   save_genres
+  #   save_games
+  #   save_authors
+  # end
 
   def save_books
-    return if @app.people.empty?
+    book_data = []
+    @books.each do |book|
+      book_data.push({ publisher: book.publisher, publish_date: book.publish_date, cover_state: book.cover_state })
+    end
 
-    books = @app.books.map(&:as_json)
-    book_file = './json_files/book.json'
-    File.write(book_file, JSON.dump(books))
+    book_file = './src/json_files/book.json'
+    File.write(book_file, JSON.pretty_generate(book_data))
   end
 
   def load_books
@@ -45,7 +47,7 @@ class Storage
 
     book_list = JSON.parse(File.read(book_file))
     book_list.each do |book|
-      book_new = Book.new(book['publisher'], book['date'], book['cover_state'])
+      book_new = Book.new(book['publisher'], book['publish_date'], book['cover_state'])
       label_new = Label.new(book['label']['title'], book['label']['color'])
       author_new = Author.new(book['author']['first_name'], book['author']['last_name'])
 
@@ -57,11 +59,13 @@ class Storage
   end
 
   def save_labels
-    return if @app.labels.empty?
+    label_data = []
+    @labels.each do |label|
+      label_data.push({ title: label.title, color: label.color })
+    end
 
-    labels = @app.labels.map(&:as_json)
-    labels_file = './json_files/label.json'
-    File.write(labels_file, JSON.dump(labels))
+    label_file = './src/json_files/label.json'
+    File.write(label_file, JSON.pretty_generate(label_data))
   end
 
   def load_labels
@@ -69,7 +73,7 @@ class Storage
     return unless File.exist?(labels_file)
 
     label_list = JSON.parse(File.read(labels_file))
-    book_list.each do |label|
+    label_list.each do |label|
       label_new = Label.new(label['title'], label['color'])
       @app.labels.push(label_new)
     end

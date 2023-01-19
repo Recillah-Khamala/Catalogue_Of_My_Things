@@ -1,11 +1,7 @@
 [
-    {
-      "id": 376,
-      "publisher": "Longhorn publishers",
-      "date": "2006",
-      "cover_state": "good",
-      "archived": true,
-      "label": { "id": 96, "title": "Ruby", "color": "Maroon" },
-      "author": { "id": 135, "first_name": "Recillah", "last_name": "Khamala" }
-    }
-  ]
+  {
+    "publisher": "Longhorn Publishers",
+    "publish_date": "2019",
+    "cover_state": "good"
+  }
+]
