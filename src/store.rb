@@ -56,7 +56,7 @@ module Storage
     album_data = []
     @music_albums.each do |music_album|
       album_data.push({ name: music_album.name, publish_date: music_album.publish_date,
-                       on_spotify: music_album.on_spotify })
+                        on_spotify: music_album.on_spotify })
     end
 
     album_file = './src/json_files/music_albums.json'
