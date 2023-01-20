@@ -10,5 +10,11 @@
     "publisher": "Apostoles",
     "publish_date": "1040",
     "cover_state": "good"
+  },
+  {
+    "name": "Red Devils",
+    "publisher": "Pl",
+    "publish_date": "1908",
+    "cover_state": "good"
   }
 ]
