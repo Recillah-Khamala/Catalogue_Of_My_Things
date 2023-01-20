@@ -1,9 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="microverse_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
+  
   <h3><b>Catalogue_Of_My_Things</b></h3>
 
 </div>
@@ -37,6 +35,8 @@
 
 **[Catalogue_Of_My_Things]** is a console app that will help to keep a record of different types of things one owns: books, music albums, and games. Everything is based on the UML class diagram. The data is stored in JSON files but we also prepare a database with tables structure analogical the program's class structure.
 
+<img src="catalog_of_my_things.png"/>
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -69,11 +69,9 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Demo Link <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Project Demo Link](https://yourdeployedapplicationlink.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -182,7 +180,7 @@ ruby src/main.rb
 > Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Feature to add other things in the catalogue]**
-- [ ] **[Oprion to delete archived]**
+- [ ] **[Option to delete archived]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
