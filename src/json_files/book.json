@@ -1,50 +1,14 @@
 [
   {
-    "name": null,
-    "publisher": "ejs",
-    "publish_date": "2020",
-    "cover_state": "good"
-  },
-  {
-    "name": null,
-    "publisher": "ksjd",
-    "publish_date": "2029",
-    "cover_state": "good"
-  },
-  {
-    "name": null,
-    "publisher": "hj",
-    "publish_date": "2028",
+    "name": "Harry Porter",
+    "publisher": "Longhorn Publishers",
+    "publish_date": "2004",
     "cover_state": "bad"
   },
   {
-    "name": null,
-    "publisher": "dsfrew",
-    "publish_date": "2014",
-    "cover_state": "good"
-  },
-  {
-    "name": "asdas",
-    "publisher": "sdas",
-    "publish_date": "2017",
-    "cover_state": "bad"
-  },
-  {
-    "name": "Harmony",
-    "publisher": "Paul",
-    "publish_date": "2019",
-    "cover_state": "goo"
-  },
-  {
-    "name": "Embu",
-    "publisher": "Recillah",
-    "publish_date": "2022",
-    "cover_state": "good"
-  },
-  {
-    "name": "Middle",
-    "publisher": "Pau;",
-    "publish_date": "2017",
+    "name": "Bible",
+    "publisher": "Apostoles",
+    "publish_date": "1040",
     "cover_state": "good"
   }
 ]

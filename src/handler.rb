@@ -1,8 +1,8 @@
 require_relative './store'
-require_relative './storage'
+# require_relative './storage'
 
 class Handler
-  include JsonStorage
+  # include JsonStorage
   include Storage
 
   # option to list all books
@@ -36,7 +36,7 @@ class Handler
   end
 
   def new_label(type)
-    print "Title of the #{type}: "
+    print "Label of the #{type}: "
     title = gets.chomp
     print "Color of the #{type}: "
     color = gets.chomp
@@ -66,7 +66,7 @@ class Handler
     @authors.push(author)
 
     puts ''
-    puts "#{label.title} by #{author.first_name} #{author.last_name} book created successfully"
+    puts "#{book.name} by #{author.first_name} #{author.last_name} book created successfully"
     save_books
     save_labels
     save_authors
@@ -102,18 +102,40 @@ class Handler
     end
   end
 
+  # option to list all music_albums
+  def albums
+    if @music_albums.empty?
+      puts 'No music albums listed!!!'
+    else
+      @music_albums.each_with_index do |music_album, i|
+        puts "#{i + 1} - Name: #{music_album.name} | Date: #{music_album.publish_date} | On spotify: #{music_album.on_spotify}"
+      end
+    end
+  end
+
+  # option to list all genre
+  def genres
+    if @genres.empty?
+      puts 'No genres listed!!!'
+    else
+      @genres.each_with_index do |genre, i|
+        puts "#{i + 1} | Name : #{genre.name}"
+      end
+    end
+  end
+
   def add_music_album
-    puts 'Album name: '
+    print 'Album name: '
     name = gets.chomp
-    puts 'Genre: '
+    print 'Genre: '
     genre_name = gets.chomp
     @genres.push(Genre.new(genre_name))
-    store_genre_data
+    save_genres
 
-    puts 'Date of publish [Enter date in format (yyyy-mm-dd)]'
+    print 'Date of publish [Enter date in format (yyyy-mm-dd)]: '
     publish_date = gets.chomp
 
-    puts 'Is it available on Spotify? Y/N'
+    print 'Is it available on Spotify? Y/N: '
     on_spotify = gets.chomp.downcase
     case on_spotify
     when 'y'
@@ -122,46 +144,70 @@ class Handler
       @music_albums.push(MusicAlbum.new(name, publish_date, false))
     end
     puts 'Music album created'
-    store_music_data
+    save_music_albums
   end
 
-  def albums
-    music_data = get_data('./src/json_files/music_albums.json')
-    puts 'No music found' if music_data.empty?
-    music_data.each do |music_album|
-      puts "Album_name: #{music_album['music_name']} | On_spotify: #{music_album['music_on_spotify']}"
-    end
-  end
 
-  def genres
-    data = get_data('./src/json_files/genres.json')
-    puts 'No genre found' if data.empty?
-    data.each do |genre|
-      puts "Genre name: #{genre['genre_name']}"
-    end
-  end
+  # def add_music_album
+  #   print 'Album name: '
+  #   name = gets.chomp
+  #   print 'Genre: '
+  #   genre_name = gets.chomp
+  #   @genres.push(Genre.new(genre_name))
+  #   save_genres
 
-  def store_music_data
-    array = []
-    @music_albums.each do |music|
-      array << {
-        music_id: music.id,
-        music_name: music.name,
-        music_on_spotify: music.on_spotify
+  #   print 'Date of publish [Enter date in format (yyyy-mm-dd)]: '
+  #   publish_date = gets.chomp
 
-      }
-    end
-    update_data(array, './src/json_files/music_albums.json')
-  end
+  #   print 'Is it available on Spotify? Y/N: '
+  #   on_spotify = gets.chomp.downcase
+  #   case on_spotify
+  #   when 'y'
+  #     @music_albums.push(MusicAlbum.new(name, publish_date, true))
+  #   when 'n'
+  #     @music_albums.push(MusicAlbum.new(name, publish_date, false))
+  #   end
+  #   puts 'Music album created'
+  #   save_music_albums
+  # end
 
-  def store_genre_data
-    array = []
-    @genres.each do |genre|
-      array << {
-        genre_id: genre.id,
-        genre_name: genre.name
-      }
-    end
-    update_data(array, './src/json_files/genres.json')
-  end
+  # def albums
+  #   music_data = get_data('./src/json_files/music_albums.json')
+  #   puts 'No music found' if music_data.empty?
+  #   music_data.each do |music_album|
+  #     puts "Album_name: #{music_album['music_name']} | On_spotify: #{music_album['music_on_spotify']}"
+  #   end
+  # end
+
+  # def genres
+  #   data = get_data('./src/json_files/genres.json')
+  #   puts 'No genre found' if data.empty?
+  #   data.each do |genre|
+  #     puts "Genre name: #{genre['genre_name']}"
+  #   end
+  # end
+
+  # def store_music_data
+  #   array = []
+  #   @music_albums.each do |music|
+  #     array << {
+  #       music_id: music.id,
+  #       music_name: music.name,
+  #       music_on_spotify: music.on_spotify
+
+  #     }
+  #   end
+  #   update_data(array, './src/json_files/music_albums.json')
+  # end
+
+  # def store_genre_data
+  #   array = []
+  #   @genres.each do |genre|
+  #     array << {
+  #       genre_id: genre.id,
+  #       genre_name: genre.name
+  #     }
+  #   end
+  #   update_data(array, './src/json_files/genres.json')
+  # end
 end

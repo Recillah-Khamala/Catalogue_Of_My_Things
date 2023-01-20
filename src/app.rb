@@ -100,8 +100,10 @@ class App < Handler
     print 'Option: '
     option = gets.chomp.to_i
 
-    close_app if option == 2 || !1
-
-    start if option == 1
+    if option == 1
+      start
+    else
+      close_app
+    end
   end
 end
