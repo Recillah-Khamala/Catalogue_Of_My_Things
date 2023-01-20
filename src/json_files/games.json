@@ -1,0 +1,12 @@
+[
+  {
+    "multiplayer": "Chess",
+    "publish_date": "2023-01-20",
+    "last_played_date": "1900-01-01"
+  },
+  {
+    "multiplayer": "Football",
+    "publish_date": "2023-01-20",
+    "last_played_date": "1800-01-01"
+  }
+]
