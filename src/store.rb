@@ -52,6 +52,50 @@ module Storage
     data
   end
 
+  def save_music_albums
+    album_data = []
+    @music_albums.each do |music_album|
+      album_data.push({ name: music_album.name, publish_date: music_album.publish_date,
+                        on_spotify: music_album.on_spotify })
+    end
+
+    album_file = './src/json_files/music_albums.json'
+    File.write(album_file, JSON.pretty_generate(album_data))
+  end
+
+  def load_music_album
+    # handle case when book.json is not available (book.json)
+    album_file = './src/json_files/music_albums.json'
+    data = []
+    if File.exist?(album_file) && File.read(album_file) != ''
+      JSON.parse(File.read(album_file)).each do |music_album|
+        data.push(MusicAlbum.new(music_album['name'], music_album['publish_date'], music_album['on_spotify']))
+      end
+    end
+    data
+  end
+
+  def save_genres
+    genre_data = []
+    @genres.each do |genre|
+      genre_data.push({ name: genre.name })
+    end
+
+    genre_file = './src/json_files/genre.json'
+    File.write(genre_file, JSON.pretty_generate(genre_data))
+  end
+
+  def load_genres
+    genre_file = './src/json_files/genre.json'
+    data = []
+    if File.exist?(genre_file) && File.read(genre_file) != ''
+      JSON.parse(File.read(genre_file)).each do |genre|
+        data.push(Genre.new(genre['name']))
+      end
+    end
+    data
+  end
+
   def save_games
     data = []
     @games.each do |game|

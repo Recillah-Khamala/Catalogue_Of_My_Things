@@ -1,9 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="microverse_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
+  
   <h3><b>Catalogue_Of_My_Things</b></h3>
 
 </div>
@@ -29,14 +27,15 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [Catalogue_Of_My_Things] <a name="about-project"></a>
 
-**[Catalogue_Of_My_Things]** is a console app that will help to keep a record of different types of things one owns: books, music albums, movies, and games. Everything is based on the UML class diagram. The data is stored in JSON files but we also prepare a database with tables structure analogical the program's class structure.
+**[Catalogue_Of_My_Things]** is a console app that will help to keep a record of different types of things one owns: books, music albums, and games. Everything is based on the UML class diagram. The data is stored in JSON files but we also prepare a database with tables structure analogical the program's class structure.
+
+<img src="catalog_of_my_things.png"/>
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -62,19 +61,17 @@
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[Option to list all available items in the Catalogue]**
+- **[Option to add items in the catalogue]**
+- **[Option to archive catalogue items]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Demo Link <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Project Demo Link](https://drive.google.com/file/d/1kCOVbKS3IVWdDbDRlYlWsIMcFwy-v5J2/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,50 +88,41 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 <!--
-Example command:
-
-```sh
- gem install rails
-```
+- An IDE e.g [Visual studio code](https://code.visualstudio.com/).
+- [A terminal](https://code.visualstudio.com/docs/terminal/basics).
  -->
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  https://github.com/Recillah-Khamala/Catalogue_Of_My_Things.git
 ```
---->
+- Navigate to the location of the folder in your machine:
+
+**`you@your-Pc-name:~$ cd catalog-of-my-things`**
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
 ```
---->
+  bundle install
+```
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
+- After Cloning this repo to your local machine.
+- To get it running on your machine, you may open the project on your IDE and open the terminal
+- On the terminal you can run:
 
-```sh
-  rails server
 ```
---->
+ruby main.rb
+```
+- After, you can follow along the app and run the appropriate option from list to interact with it.
 
 ### Run tests
 
@@ -143,8 +131,8 @@ To run tests, run the following command:
 <!--
 Example command:
 
-```sh
-  bin/rails test test/models/article_test.rb
+```
+rspec
 ```
 --->
 
@@ -153,10 +141,9 @@ Example command:
 You can deploy this project using:
 
 <!--
-Example:
 
-```sh
-
+```
+ruby src/main.rb
 ```
  -->
 
@@ -165,8 +152,6 @@ Example:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
 
 👤 **Recillah Khamala**
 
@@ -194,9 +179,8 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Feature to add other things in the catalogue]**
+- [ ] **[Option to delete archived]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -206,7 +190,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Recillah-Khamala/Catalogue_Of_My_Things/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -214,9 +198,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project give it a ⭐️ or contact us.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -224,25 +206,7 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
+I would like to thank microverse for adding this into the carriculum
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

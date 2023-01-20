@@ -1,7 +1,22 @@
 [
   {
-    "music_id" : 84,
-    "music_name" : "Midnight Train",
-    "music_on_spotify" : true
+    "name": "Pink print",
+    "publish_date": "2015",
+    "on_spotify": true
+  },
+  {
+    "name": "Love",
+    "publish_date": "2007",
+    "on_spotify": false
+  },
+  {
+    "name": "Afrika",
+    "publish_date": "2020",
+    "on_spotify": true
+  },
+  {
+    "name": "Zikie",
+    "publish_date": "20219-01-01",
+    "on_spotify": true
   }
 ]

@@ -14,8 +14,8 @@ class App < Handler
     @labels = load_labels
     @games = load_games
     @authors = load_authors
-    @genres = []
-    @music_albums = []
+    @genres = load_genres
+    @music_albums = load_music_album
 
     # @storage = Storage.new(self)
   end
@@ -100,8 +100,10 @@ class App < Handler
     print 'Option: '
     option = gets.chomp.to_i
 
-    close_app if option == 2
-
-    start if option == 1
+    if option == 1
+      start
+    else
+      close_app
+    end
   end
 end

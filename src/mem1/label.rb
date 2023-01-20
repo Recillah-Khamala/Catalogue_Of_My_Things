@@ -17,8 +17,8 @@ class Label
   #     should add the input item to the collection of items
   #     should add self as a property of the item object (by using the correct setter from the item object)
   def add_item(item)
-    @items.push(item)
-    item.label(self)
+    @items << item
+    item.label = self
   end
 
   # All data should be preserved by saving collections in .json files
