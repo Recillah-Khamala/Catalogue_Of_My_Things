@@ -8,5 +8,15 @@
     "name": "Love",
     "publish_date": "2007",
     "on_spotify": false
+  },
+  {
+    "name": "Afrika",
+    "publish_date": "2020",
+    "on_spotify": true
+  },
+  {
+    "name": "Zikie",
+    "publish_date": "20219-01-01",
+    "on_spotify": true
   }
 ]
